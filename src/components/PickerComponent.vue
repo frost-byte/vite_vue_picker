@@ -7,14 +7,16 @@
     </v-btn-toggle>
   </v-row>
   <v-row>
-    <Datepicker></Datepicker>
+    <Datepicker v-model="date"></Datepicker>
   </v-row>
 </template>
 
 <script lang="ts">
 import { DateExtent } from '@/interfaces/DateExtentInterface';
+import Datepicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css';
 
-const extents: Map<string, DateExtent> = new Map(
+const extents: Map<string, DateExtent> = new Map([
   [
     'day',
     new DateExtent(
@@ -45,6 +47,17 @@ const extents: Map<string, DateExtent> = new Map(
       new Date('2023-01-29'),
       new Date('2023-02-25')
     ),
-  ]
-);
+  ],
+]);
+export default {
+  components: { Datepicker },
+  data() {
+    const currentExtent: DateExtent = extents.get('day');
+
+    return {
+      date: null,
+      minDate: currentExtent.minDate,
+    };
+  },
+};
 </script>

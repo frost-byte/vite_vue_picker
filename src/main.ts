@@ -10,6 +10,8 @@ import store from './store';
 // Load Vuetify
 import vuetify from './plugins/vuetify';
 
+import Datepicker from '@vuepic/vue-datepicker';
+
 // Load Layout vue.
 import App from './App.vue';
 
@@ -18,6 +20,7 @@ const vue = createApp(App);
 vue.use(router);
 vue.use(store);
 vue.use(vuetify);
+vue.component('Datepicker', Datepicker);
 
 // Run!
 router.isReady().then(() => {
