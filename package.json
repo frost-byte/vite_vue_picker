@@ -112,6 +112,6 @@
     "http-cache-semantics": "^4.1.1"
   },
   "stackblitz": {
-    "startCommand": "yarn run test"
+    "startCommand": "yarn run dev"
   }
 }
