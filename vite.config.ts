@@ -36,11 +36,7 @@ export default defineConfig(async ({ command, mode }): Promise<UserConfig> => {
       // https://github.com/fi3ework/vite-plugin-checker
       checker({
         typescript: true,
-        vueTsc: true,
-        eslint: {
-          lintCommand:
-            'eslint . --fix --cache --cache-location ./node_modules/.vite/vite-plugin-eslint', // for example, lint .ts & .tsx
-        },
+        vueTsc: true
       }),
     ],
     // https://vitejs.dev/config/server-options.html
